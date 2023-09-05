@@ -1,3 +1,17 @@
+function loadCSS(url) {
+  var head = document.getElementsByTagName('head')[0];
+  var link = document.createElement('link');
+  
+  link.type = 'text/css';
+  link.rel = 'stylesheet';
+  link.href = url;
+  
+  head.appendChild(link);
+}
+
+// 사용 예시
+loadCSS('https://cdn.jsdelivr.net/gh/m1nque/tistory-comment-fairy@latest/dist/tistory-comment-fairy.css');
+
 (function () {
   const metaTag = document.querySelector('meta[property="og:site_name"]');
   const blogTitle = metaTag ? metaTag.content : null;

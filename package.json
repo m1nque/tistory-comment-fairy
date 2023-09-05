@@ -1,6 +1,6 @@
 {
   "name": "tistory-comment-fairy",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "Tistory comment fiary for SLD",
   "main": "src/index.js",
   "repository": "https://github.com/m1nque/tistory-comment-fairy.git",
@@ -11,13 +11,17 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "babel src/index.js -o dist/tistory-comment-fairy.js", 
-    "build:compressed": "yarn build && uglifyjs dist/tistory-comment-fairy.js -m -o dist/tistory-comment-fairy.min.js"
+    "build": "babel src/index.js -o dist/tistory-comment-fairy.js",
+    "compress:js": "uglifyjs dist/tistory-comment-fairy.js -m -o dist/tistory-comment-fairy.min.js",
+    "compress:css": "uglifycss dist/tistory-comment-fairy.css > dist/tistory-comment-fairy.min.css",
+    "compress": "yarn compress:js && yarn compress:css",
+    "build:compressed": "yarn build && yarn compress"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.15",
     "@babel/core": "^7.22.15",
     "@babel/preset-env": "^7.22.15",
-    "uglify-js": "^3.17.4"
+    "uglify-js": "^3.17.4",
+    "uglifycss": "^0.0.29"
   }
 }
