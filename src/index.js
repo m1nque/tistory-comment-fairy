@@ -1,16 +1,16 @@
 
 const observer = new MutationObserver((mutations, observer) => {
-  let targetQuery = '.tt-box-write';
-  let mesage = '티스토리 계정으로 작성하시겠어요?';
+  let targetQuery = '';
+  let mesage = '';
   try {
       targetQuery = fairyTarget;
   } catch (e) {
-      // ignore error, use default target query
+      targetQuery = '.tt-box-write';
   }
   try {
-    message = defaultFairyMessage;
+    message = fairyMessage; // 다른 공간에 정의되어 있다고 가정하고 try-catch를 실행
   } catch (e) {
-    // ignore error, use default message
+    message = '티스토리 계정으로 작성하시겠어요?';
   }
 
   for (let mutation of mutations) {
