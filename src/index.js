@@ -1,5 +1,7 @@
+
+
 (function () {
-  let blogTitle = "[##_title_##]";
+  let blogTitle = "";
 
   let targetQuery = "";
   let message = "";
@@ -108,6 +110,10 @@
       var contents = range.cloneContents();
       var temp = document.createElement("div");
 
+      if (!contents) {
+        contents = document.title
+      }
+
       temp.appendChild(contents);
 
       //var url = document.location.href;
@@ -121,7 +127,7 @@
 
       var url = host + document.location.pathname;
       var decodedUrl = decodeURI(url);
-      var postfix = " [" + blogTitle + ":티스토리]";
+      var postfix = ''; // " [" + blogTitle + ":티스토리]"; // blog title의 값을 구할 방법이 없는 관계로 보류
 
       event.clipboardData.setData(
         "text/plain",
