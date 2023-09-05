@@ -1,0 +1,19 @@
+{
+  "name": "tistory-comment-fairy",
+  "version": "1.0.0",
+  "description": "Tistory comment fiary for SLD",
+  "main": "src/index.js",
+  "repository": "https://github.com/m1nque/tistory-comment-fairy.git",
+  "author": {
+    "name": "m1nque",
+    "email": "saver47@gmail.com",
+    "url": "https://velog.io/@m1nque"
+  },
+  "license": "MIT",
+  "scripts": {
+    "uglify": "uglifyjs src/index.js -m -o dist/tistory-comment-helper.min.js"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.17.4"
+  }
+}
