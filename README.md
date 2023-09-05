@@ -119,7 +119,7 @@ var fairyTarget = '.tt-area-reply'; // 대상 클래스 또는 아이디(예, #a
 댓글요정과 공유요정을 각각 비활성화 하는 기능이 추가되었습니다.
 아래와 같은 변수를 선언하고, false로 값을 지정하면 해당 요정은 잠을 자게 됩니다.
 
-```javascript
+```html
 <script>
 var useCommentFairy = true;
 var useShareFairy = true;
