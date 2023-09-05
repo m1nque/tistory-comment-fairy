@@ -110,10 +110,6 @@
       var contents = range.cloneContents();
       var temp = document.createElement("div");
 
-      if (!contents) {
-        contents = document.title
-      }
-
       temp.appendChild(contents);
 
       //var url = document.location.href;
@@ -125,13 +121,15 @@
         host += document.location.domainname;
       }
 
+      const innerText = temp.innerText || document.title;
+
       var url = host + document.location.pathname;
       var decodedUrl = decodeURI(url);
       var postfix = ''; // " [" + blogTitle + ":티스토리]"; // blog title의 값을 구할 방법이 없는 관계로 보류
 
       event.clipboardData.setData(
         "text/plain",
-        temp.innerText + "\n출처: " + decodedUrl + postfix
+        innerText + "\n출처: " + decodedUrl + postfix
       );
       event.clipboardData.setData(
         "text/html",
