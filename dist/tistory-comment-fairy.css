@@ -1,0 +1,15 @@
+.fairy-messagebox {
+  /* TODO default style */
+}
+.fairy-message {
+  /* TODO default style */
+}
+a.fairy-sign-in {
+	text-decoration: none;
+	color: #FA9C1B;
+}
+
+a.fairy-sign-in:visited {
+	text-decoration: none;
+	color: #FA9C1B;
+}
