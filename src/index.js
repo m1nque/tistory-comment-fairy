@@ -1,32 +1,39 @@
+let targetQuery = '';
+let message = '';
+let linkMessage = '';
+
+try {
+    targetQuery = fairyTarget;
+} catch (e) {
+    targetQuery = '.tt-box-write';
+}
+try {
+  message = fairyMessage; // 다른 공간에 정의되어 있다고 가정하고 try-catch를 실행
+} catch (e) {
+  message = '티스토리 계정으로 작성하시겠어요?';
+}
+
+try {
+  linkMessage = fairyLinkMessage;
+} catch (e) {
+  linkMessage = '다시 로그인하기'
+}
 
 const observer = new MutationObserver((mutations, observer) => {
-  let targetQuery = '';
-  let message = '';
-  try {
-      targetQuery = fairyTarget;
-  } catch (e) {
-      targetQuery = '.tt-box-write';
-  }
-  try {
-    message = fairyMessage; // 다른 공간에 정의되어 있다고 가정하고 try-catch를 실행
-  } catch (e) {
-    message = '티스토리 계정으로 작성하시겠어요?';
-  }
-
   for (let mutation of mutations) {
       if (mutation.type === 'childList') {
           // const elementToAdd = document.querySelector(targetQuery).appendChild(fairyBox);
 
           document.querySelectorAll(targetQuery).forEach(e => {
             if (!e.querySelector('.fairy-messagebox') && e.querySelector('.tt-btn_register').disabled) {
-              addFairy(e, message);
+              addFairy(e);
             }
           });
       }
   }
 })
 
-function addFairy (target, message) {
+function addFairy (target) {
   observer.disconnect();  // 옵저버 중지
 
   let num='';
@@ -50,7 +57,7 @@ function addFairy (target, message) {
   textSpan.innerHTML = message +
     '&nbsp;<a class="fairy-sign-in" href="https://www.tistory.com/auth/login/?redirectUrl=' + 
     encodeURIComponent(TistoryBlog.tistoryUrl+window.location.pathname+'#entry' + num + 'Comment') + 
-    '" rel="noopener noreferrer">다시 로그인하기</a>';
+    '" rel="noopener noreferrer">' + linkMessage + '</a>';
 
   fairyBox.appendChild(textSpan);
   
