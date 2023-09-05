@@ -14,7 +14,7 @@ function loadCSS(url) {
 }
 
 // 사용 예시
-loadCSS('path/to/your/styles.css');
+loadCSS('https://cdn.jsdelivr.net/gh/m1nque/tistory-comment-fairy@latest/dist/tistory-comment-fairy.css');
 (function () {
   var metaTag = document.querySelector('meta[property="og:site_name"]');
   var blogTitle = metaTag ? metaTag.content : null;

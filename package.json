@@ -1,6 +1,6 @@
 {
   "name": "tistory-comment-fairy",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Tistory comment fiary for SLD",
   "main": "src/index.js",
   "repository": "https://github.com/m1nque/tistory-comment-fairy.git",
