@@ -1,5 +1,6 @@
 (function () {
-  let blogTitle = '';
+  const metaTag = document.querySelector('meta[property="og:site_name"]');
+  const blogTitle = metaTag ? metaTag.content : null;
 
   
   // 조건부 동작을 유도
@@ -108,12 +109,11 @@
           host += document.location.domainname;
         }
   
-        const innerText = temp.innerText || document.title;
-  
         var url = host + document.location.pathname;
         var decodedUrl = decodeURI(url);
-        var postfix = ''; // " [" + blogTitle + ":티스토리]"; // blog title의 값을 구할 방법이 없는 관계로 보류
-  
+        var postfix =  " [" + blogTitle + ":티스토리]";
+        
+        const innerText = temp.innerText || document.title;
         event.clipboardData.setData(
           'text/plain',
           innerText + '\n출처: ' + decodedUrl + postfix

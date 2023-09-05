@@ -11,9 +11,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "uglify": "uglifyjs src/index.js -m -o dist/tistory-comment-fairy.min.js"
+    "build": "babel src/index.js -o dist/tistory-comment-fairy.js", 
+    "build:compressed": "yarn build && uglifyjs dist/tistory-comment-fairy.js -m -o dist/tistory-comment-fairy.min.js"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.15",
+    "@babel/core": "^7.22.15",
+    "@babel/preset-env": "^7.22.15",
     "uglify-js": "^3.17.4"
   }
 }
