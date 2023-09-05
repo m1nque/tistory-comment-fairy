@@ -1,7 +1,7 @@
 
 const observer = new MutationObserver((mutations, observer) => {
   let targetQuery = '';
-  let mesage = '';
+  let message = '';
   try {
       targetQuery = fairyTarget;
   } catch (e) {
@@ -19,7 +19,7 @@ const observer = new MutationObserver((mutations, observer) => {
 
           document.querySelectorAll(targetQuery).forEach(e => {
             if (!e.querySelector('.fairy-messagebox') && e.querySelector('.tt-btn_register').disabled) {
-              addFairy(e, mesage);
+              addFairy(e, message);
             }
           });
       }
