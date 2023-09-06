@@ -46,7 +46,7 @@ https://사용자2차도메인.입니다/entry/%ED%8B%B0%EC%8A%A4%ED%86%A0%EB%A6
 
 ### 설치 가이드
 
-테마 수정 화면에서 아래 코드를 삽입합니다.
+스킨 수정 화면에서 아래 코드를 삽입합니다.
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/m1nque/tistory-comment-fairy@latest/dist/tistory-comment-fairy.min.js"></script>
@@ -59,33 +59,6 @@ https://사용자2차도메인.입니다/entry/%ED%8B%B0%EC%8A%A4%ED%86%A0%EB%A6
 <script src="https://cdn.jsdelivr.net/gh/m1nque/tistory-comment-fairy@latest/dist/tistory-comment-fairy.min.js"></script>
 </body>
 </html>
-```
-
-
-### 스타일 가이드
-
-테마 수정 화면에서 아래 클래스를 만들어 주고 수정해줍니다. 더 필요한 스타일이 있을 경우 아래 클래스를 바탕으로 수정해 줍니다.
-
-```
-
-.fairy-messagebox { /* 요정의 안내가 나오는 박스 영역 */
-	padding: 4px;
-	text-align: right;
-	flex: 1;
-}
-.fairy-message {  /* 요정의 안내 메시지 */
-	margin-right: 8px;
-}
-a.fairy-sign-in { /* 요정이 안내해주는 링크 */
-	text-decoration: none;
-	color: #FA9C1B;
-}
-
-a.fairy-sign-in:visited {
-	text-decoration: none;
-	color: #FA9C1B;
-}
-
 ```
 
 
@@ -130,6 +103,36 @@ var useShareFairy = true;
 </script>
 <script src="https://cdn.jsdelivr.net/gh/m1nque/tistory-comment-fairy@latest/dist/tistory-comment-fairy.min.js"></script>
 ```
+
+
+
+### 스타일 가이드
+
+스킨 수정 화면에서 아래 클래스를 만들어 주고 수정해줍니다. 더 필요한 스타일이 있을 경우 아래 클래스를 바탕으로 수정해 줍니다.
+잘 모르시겠으면 건드리지 않으셔도 됩니다.
+
+```
+
+.fairy-messagebox { /* 요정의 안내가 나오는 박스 영역 */
+	padding: 4px;
+	text-align: right;
+	flex: 1;
+}
+.fairy-message {  /* 요정의 안내 메시지 */
+	margin-right: 8px;
+}
+a.fairy-sign-in { /* 요정이 안내해주는 링크 */
+	text-decoration: none;
+	color: #FA9C1B;
+}
+
+a.fairy-sign-in:visited {
+	text-decoration: none;
+	color: #FA9C1B;
+}
+
+```
+
 
 ## 알려진 문제점
 
